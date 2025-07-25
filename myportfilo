@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: hsl(281, 14%, 40%);
+      color: #080807;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #1f1c1a;
+      text-decoration: none;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #0f0d0d;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgb(197, 194, 194);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li {
+      margin-left: 1.5rem;
+    }
+    .nav-links a {
+      font-weight: 600;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #289475, #cf6254);
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+    .hero .highlight {
+      color: yellow;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: white;
+      color: #b17b52;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #eee;
+    }
+    .hero-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgb(113, 33, 33);
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-top: 2rem;
+    }
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Contact */
+    #contact p {
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #80411d;
+      color: rgb(8, 7, 7);
+    }
+
+    /* Animation Styles */
+    .fade-in, .slide-in, .zoom-in, .scale-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .zoom-in.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .scale-up.visible {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">MyPortfolio</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="content">
+      <img src="./dsplinkedin.jpg" alt="Your Photo" class="hero-img" />
+      <h2>Hello, I'm <span class="highlight">Devi Sri Prasad Ankala</span></h2>
+      <h1>I'm a Web Developer</h1>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="slide-in">
+    <h2>About Me</h2>
+    <p>I’m a frontend developer focused on creating beautiful, user-friendly websites using HTML, CSS, and JavaScript. I love adding interactive animations and making things come alive on screen!</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Built using HTML, CSS, and JavaScript. Features smooth scrolling, animations, and responsive design.</p>
+        <a href="#">View</a>
+      </div>
+      <div class="project-card">
+        <h3>To-Do App</h3>
+        <p>A simple to-do list app with local storage and task animations.</p>
+        <a href="#">View</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="zoom-in">
+    <h2>Certifications</h2>
+    <ul>
+      <li>✔️ HTML, CSS, JavaScript Certification – FreeCodeCamp</li>
+      <li>✔️ Responsive Web Design – Coursera</li>
+      <li>✔️ JavaScript Developer – HackerRank</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="scale-up">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:devisriprasad803@gmail.com">devisriprasad803@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/devisriprasad" target="_blank">linkedin.com/in/devisriprasad</a></p>
+
+  </section>
+
+  <footer>
+    <p>© 2025 Devisriprasad803@gmail.com</p>
+    <p>https://www.linkedin.com/in/devisriprasad</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faders = document.querySelectorAll(".fade-in, .slide-in, .zoom-in, .scale-up");
+      const appearOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      }, {
+        threshold: 0.2,
+      });
+
+      faders.forEach(el => {
+        appearOnScroll.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
